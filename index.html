@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chicago Legal Consumer Reality Check 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Montserrat','Open Sans',sans-serif; background:#f5f5f5; line-height:1.6; color:#333; }
+    h1,h2,h3,h4 { font-weight:700; margin-bottom:1rem; }
+    p { margin-bottom:1.5rem; }
+    section { padding:80px 0; }
+    .container { max-width:1200px; margin:auto; padding:0 20px; }
+    .text-center { text-align:center; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+        url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1350&q=80');
+      background-size:cover; background-position:center;
+      color:#fff; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;
+    }
+    .hero-content { max-width:800px; padding:20px; animation:fadeIn 2s ease forwards; }
+    .hero h1 { font-size:3rem; margin-bottom:20px; line-height:1.2; }
+    .hero p { font-size:1.2rem; opacity:.9; }
+
+    /* Video */
+    .video-section { background:#000; text-align:center; padding:60px 0; }
+    .video-section video {
+      max-width:90%;
+      border-radius:12px;
+      box-shadow:0 0 40px rgba(211,47,47,0.6);
+    }
+
+    /* Animated Counters */
+    .stats { background:#fff; text-align:center; }
+    .stats-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:40px; margin-top:40px;
+    }
+    .stat-card {
+      background:#f9f9f9; border-radius:8px; padding:30px;
+      box-shadow:0 0 10px rgba(0,0,0,.05);
+      transition:.3s ease;
+    }
+    .stat-card:hover { transform:translateY(-5px); }
+    .stat-number { font-size:2.5rem; color:#d32f2f; font-weight:700; }
+
+    /* Reddit-style quotes */
+    .quotes { background:#222; padding:80px 20px; }
+    .quote {
+      display:flex; align-items:flex-start; margin-bottom:30px; opacity:0; transform:translateY(30px);
+      transition:all .6s ease;
+    }
+    .quote.visible { opacity:1; transform:translateY(0); }
+    .avatar {
+      width:50px; height:50px; border-radius:50%; background:#444; margin-right:15px; flex-shrink:0;
+    }
+    .bubble {
+      background:#333; color:white; padding:20px; border-radius:12px; max-width:600px; position:relative;
+    }
+    .bubble::after {
+      content:''; position:absolute; top:15px; left:-10px; width:0; height:0;
+      border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:10px solid #333;
+    }
+    .quote:nth-child(even) { flex-direction:row-reverse; }
+    .quote:nth-child(even) .bubble::after {
+      left:auto; right:-10px; border-right:none; border-left:10px solid #333;
+    }
+    .quote:nth-child(even) .avatar { margin-right:0; margin-left:15px; }
+
+    /* Brutal Patterns */
+    .patterns { background:white; }
+    .pattern-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:40px; }
+    .pattern-card {
+      background:#f9f9f9; padding:30px; border-radius:8px; text-align:center;
+      box-shadow:0 0 10px rgba(0,0,0,.05);
+      transition:.3s ease;
+    }
+    .pattern-card:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,.1); }
+    .pattern-card h3 { color:#d32f2f; margin-bottom:15px; }
+
+    /* Wake-up Call */
+    .wake-up { background:#111; color:white; text-align:center; padding:100px 20px; }
+    .wake-up h2 { color:#d32f2f; margin-bottom:20px; }
+
+    /* Bonus Insight */
+    .bonus { background:#fef3f3; text-align:center; padding:80px 20px; }
+    .bonus h2 { color:#d32f2f; margin-bottom:20px; }
+
+    /* CTA */
+    .cta { background:#d32f2f; color:white; text-align:center; padding:80px 20px; }
+    .cta h2 { font-size:2.5rem; margin-bottom:20px; }
+    .cta p { font-size:1.2rem; margin-bottom:40px; max-width:700px; margin:auto; }
+    .cta a {
+      display:inline-block; margin:10px; padding:12px 30px; border-radius:4px; text-decoration:none; color:white; font-weight:bold; background:#b71c1c;
+      transition:.3s;
+    }
+    .cta a:hover { background:#7f0e0e; }
+
+    footer { background:#000; color:#999; padding:30px 0; text-align:center; font-size:.9rem; }
+
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @media(max-width:768px){
+      .hero h1{font-size:2rem;} .quote{flex-direction:column!important; align-items:flex-start!important;}
+      .quote:nth-child(even){flex-direction:column!important;}
+      .quote:nth-child(even) .avatar{margin-left:0; margin-bottom:10px;}
+      .bubble::after,.quote:nth-child(even) .bubble::after{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>See Why Chicago Clients Are Hesitant — And How To Win Them Back</h1>
+      <p>Unfiltered voices. Real data. Your wake‑up call for 2025.</p>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="video-section">
+    <video src="intro.mp4" controls preload="auto" playsinline></video>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container text-center">
+      <h2>Chicago’s Legal Market By The Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number" data-target="61507">0</div><p>New Criminal Charges in 2024</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="1000000">0</div><p>Total Cases Filed in Cook County</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="300">0</div><p>Daily Civil Cases</p></div>
+        <div class="stat-card"><div class="stat-number" data-target="85">0</div><p>% of Clients Prefer Referrals</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quotes -->
+  <section class="quotes">
+    <div class="container">
+
+      <!-- 25 Dramatic Reddit-style quotes -->
+      <div class="quote"><div class="avatar"></div><div class="bubble">If you see their commercial on WGN, you're not a real lawyer.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">He ghosted me for weeks and sent me a $1,200 bill.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Billboards and TV ads just scream scam.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">All these lawyers use the same paperwork and charge insane fees.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">I wish there was ONE law firm that felt human, not like a money machine.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">I googled a lawyer, and their first review said “never called me back.” Instant nope.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Every lawyer I called made me feel like a walking ATM.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">My neighbor said “don’t trust the billboard guys” and she was right.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Called 3 firms. 2 never picked up. 1 receptionist said “We’re too busy.”</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">We ended up doing mediation because lawyers wanted to fight for drama, not peace.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">My cousin paid 10k and the lawyer just filed standard papers. Could’ve done myself.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">These law firms feel like car dealerships with suits.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Saw a TV ad, googled them, reviews were terrible. Immediate red flag.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">I only trust someone my friend personally recommends now.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Chicago lawyers? Too many promises, not enough answers.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Called one guy, he started talking about fees before even my case. Bye.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">I think lawyers here chase drama because it pays more.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">The good ones are hidden. No ads, just referrals.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">A firm texted me “we can win $$$” before even hearing my story. Gross.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">My mom said she felt like just a number. They didn’t even remember her name.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">One firm asked for $500 to “review my case” on call. I hung up.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">They all promise to fight. I just wanted peace for my kid.</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Even Google reviews feel fake now. Who can we trust?</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Best advice I got: “Find the lawyer who DOESN’T advertise.”</div></div>
+      <div class="quote"><div class="avatar"></div><div class="bubble">Chicago legal scene feels like a hustle. I’d rather go pro se.</div></div>
+
+    </div>
+  </section>
+
+  <!-- Brutal Patterns -->
+  <section class="patterns">
+    <div class="container text-center">
+      <h2>4 Brutal Patterns Costing Chicago Firms Clients</h2>
+      <div class="pattern-grid">
+        <div class="pattern-card"><h3>Ads Kill Trust</h3><p>Billboards & TV make firms feel desperate.</p></div>
+        <div class="pattern-card"><h3>Google Isn’t Credible</h3><p>Clients assume top results are paid or fake.</p></div>
+        <div class="pattern-card"><h3>Client Experience Fails</h3><p>Ghosting & surprise bills crush reputations.</p></div>
+        <div class="pattern-card"><h3>Referrals Rule</h3><p>Word‑of‑mouth dominates over any marketing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wake-up Call -->
+  <section class="wake-up">
+    <div class="container">
+      <h2>Every Ignored Voice = Lost Revenue</h2>
+      <p>Chicago’s residents are talking, but most law firms are not listening. The next client will go to the firm that adapts first.</p>
+    </div>
+  </section>
+
+  <!-- Bonus Insight -->
+  <section class="bonus">
+    <div class="container">
+      <h2>Industry Shock: $367M Settlement</h2>
+      <p>Salvi, Schostok & Pritchard secured a $367 million settlement in 2024. Massive opportunities exist—but only for firms that build trust before clients ever call.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>It’s Time to Capture the Clients You’re Losing</h2>
+      <p>Your next step determines if Chicago keeps ignoring your firm—or starts calling.</p>
+      <a href="#">Review Full Insights</a>
+      <a href="https://calendly.com/adm-fintech1/30min">Book a Strategy Call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Noblecom Solutions Inc. | www.noblecomsolutionsinc.com</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animated counters
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 100;
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+        if(count < target) {
+          counter.innerText = count + increment;
+          setTimeout(animateCounters, 30);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      });
+    };
+    window.addEventListener('scroll', () => {
+      const statsSection = document.querySelector('.stats');
+      const top = statsSection.getBoundingClientRect().top;
+      if(top < window.innerHeight && !statsSection.classList.contains('animated')) {
+        statsSection.classList.add('animated');
+        animateCounters();
+      }
+    });
+
+    // Animate quotes on scroll
+    const quotes = document.querySelectorAll('.quote');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold:0.1 });
+    quotes.forEach(quote => observer.observe(quote));
+  </script>
+
+</body>
+</html>
